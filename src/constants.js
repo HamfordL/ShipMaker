@@ -11,3 +11,18 @@ export const APPLICATION_STEPS = [
   { title: "Shipping Option", content: ShippingOptions },
   { title: "Review and Confirm", content: ReviewConfirm },
 ];
+
+const ADDRESS = {
+  name: '',
+  address: '',
+  city: '',
+  state: '',
+  zipCode: '',
+};
+
+export const INIT_APP_STATE = {
+  from: ADDRESS,
+  to: ADDRESS,
+  weight: 0,
+  shippingOption: 1,
+};
