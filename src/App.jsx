@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageHeader, Steps, Button } from 'antd';
+import { PageHeader, Steps } from 'antd';
 
 import { APPLICATION_STEPS, INIT_APP_STATE as initState } from './constants';
 import PackageWeight from './components/package-weight';
@@ -8,14 +8,6 @@ import SenderAddress from './components/sender-address';
 function App() {
   const [currentStep, setCurrentStep] = React.useState(0);
   const [shippingLabel, setShippingLabel] = React.useState({ ...initState });
-
-  const next = () => {
-    setCurrentStep(currentStep + 1);
-  };
-
-  const prev = () => {
-    setCurrentStep(currentStep - 1);
-  };
 
   const updateAppState = (newState) => {
     setShippingLabel({
@@ -39,7 +31,11 @@ function App() {
       </Steps>
 
       {currentStep === 0
-        ? <SenderAddress />
+        ? <SenderAddress
+            currentStep={currentStep}
+            setCurrentStep={setCurrentStep}
+            updateAppState={updateAppState}
+          />
         : <PackageWeight
             currentStep={currentStep}
             setCurrentStep={setCurrentStep}

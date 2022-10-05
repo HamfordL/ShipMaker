@@ -11,6 +11,7 @@ const tailLayout = {
 
 const PackageWeight = (props) => {
   const { currentStep, setCurrentStep, updateAppState } = props;
+
   const handleSubmit = (formValues) => {
     updateAppState({ weight: formValues.weight });
     setCurrentStep(currentStep + 1);
@@ -19,7 +20,7 @@ const PackageWeight = (props) => {
   const goBack = () => setCurrentStep(currentStep - 1);
 
   return (
-    <Row align='middle' justify='center'>
+    <Row align="middle" justify="center">
       <Col span={24}>
         <Typography.Title level={3}>
           Enter Package Weight (in grams):
@@ -35,7 +36,7 @@ const PackageWeight = (props) => {
           <Form.Item {...tailLayout}>
             <Space>
               <Button onClick={goBack}>Back</Button>
-              <Button type="primary" htmlType='submit'>Next</Button>
+              <Button type="primary" htmlType="submit">Next</Button>
             </Space>
           </Form.Item>
         </Form>
