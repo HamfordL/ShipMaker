@@ -16,6 +16,7 @@ function App() {
     });
   };
 
+  console.log('my new state is: ', shippingLabel)
   console.log('currentStep: ', currentStep);
 
   const ComponentToRender = APPLICATION_STEPS[currentStep].content;
