@@ -32,13 +32,18 @@ function App() {
         ))}
       </Steps>
 
-      {currentStep === 0
+      {currentStep === 0}
         ? <SenderAddress
             currentStep={currentStep}
             setCurrentStep={setCurrentStep}
             updateAppState={updateAppState}
           />
-        : <PackageWeight
+          : <ReceiverAddress
+          currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
+          updateAppState={updateAppState}
+          />
+          ? <PackageWeight
             currentStep={currentStep}
             setCurrentStep={setCurrentStep}
             updateAppState={updateAppState}
@@ -49,3 +54,5 @@ function App() {
 }
 
 export default App;
+
+

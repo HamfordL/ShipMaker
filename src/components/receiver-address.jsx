@@ -22,7 +22,7 @@ const ReceiverAddress = ({ updateAppState, currentStep, setCurrentStep }) => {
   return (
     <Row align="middle" justify="center">
       <Col span={24}>
-        <Typography.Title level={3}>Sender's Address</Typography.Title>
+        <Typography.Title level={3}>Receiver's Address</Typography.Title>
       </Col>
 
       <Col xs={24} sm={20} md={18} lg={16} xl={12}>
