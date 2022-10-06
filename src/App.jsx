@@ -4,6 +4,7 @@ import { PageHeader, Steps } from 'antd';
 import { APPLICATION_STEPS, INIT_APP_STATE as initState } from './constants';
 import PackageWeight from './components/package-weight';
 import SenderAddress from './components/sender-address';
+import ReceiverAddress from './components/receiver-address';
 
 function App() {
   const [currentStep, setCurrentStep] = React.useState(0);
