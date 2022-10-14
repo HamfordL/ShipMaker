@@ -13,7 +13,7 @@ const ReceiverAddress = ({ updateAppState, currentStep, setCurrentStep }) => {
   const [form] = Form.useForm();
 
   const handleSubmit = (formValues) => {
-    updateAppState({ from: formValues });
+    updateAppState({ to: formValues });
     setCurrentStep(currentStep + 1);
   };
 

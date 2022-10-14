@@ -32,22 +32,23 @@ function App() {
         ))}
       </Steps>
 
-      {currentStep === 0}
+      {currentStep === 0
         ? <SenderAddress
             currentStep={currentStep}
             setCurrentStep={setCurrentStep}
             updateAppState={updateAppState}
           />
-          : <ReceiverAddress
-          currentStep={currentStep}
-          setCurrentStep={setCurrentStep}
-          updateAppState={updateAppState}
-          />
-          ? <PackageWeight
-            currentStep={currentStep}
-            setCurrentStep={setCurrentStep}
-            updateAppState={updateAppState}
-          />
+          : currentStep === 1 
+            ? <ReceiverAddress
+              currentStep={currentStep}
+              setCurrentStep={setCurrentStep}
+              updateAppState={updateAppState}
+            />
+            : <PackageWeight
+              currentStep={currentStep}
+              setCurrentStep={setCurrentStep}
+              updateAppState={updateAppState}
+            />
       }
     </div>
   );
