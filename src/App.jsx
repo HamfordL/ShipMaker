@@ -2,9 +2,7 @@ import React from 'react';
 import { PageHeader, Steps } from 'antd';
 
 import { APPLICATION_STEPS, INIT_APP_STATE as initState } from './constants';
-import PackageWeight from './components/package-weight';
-import SenderAddress from './components/sender-address';
-import ReceiverAddress from './components/receiver-address';
+
 
 function App() {
   const [currentStep, setCurrentStep] = React.useState(0);
@@ -32,24 +30,11 @@ function App() {
         ))}
       </Steps>
 
-      {currentStep === 0
-        ? <SenderAddress
-            currentStep={currentStep}
+<ComponentToRender currentStep={currentStep}
             setCurrentStep={setCurrentStep}
+            shippingLabel={shippingLabel}
             updateAppState={updateAppState}
-          />
-          : currentStep === 1 
-            ? <ReceiverAddress
-              currentStep={currentStep}
-              setCurrentStep={setCurrentStep}
-              updateAppState={updateAppState}
             />
-            : <PackageWeight
-              currentStep={currentStep}
-              setCurrentStep={setCurrentStep}
-              updateAppState={updateAppState}
-            />
-      }
     </div>
   );
 }
@@ -57,3 +42,8 @@ function App() {
 export default App;
 
 
+
+  // display text how much the total is for 
+  // shipping weight x ship option 1 or 2 * shipping rate 0.4
+  // back button, confirm button (done)
+  // display shipping cost
