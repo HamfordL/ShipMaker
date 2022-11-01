@@ -14,6 +14,10 @@ function App() {
       ...newState,
     });
   };
+  const resetAppState = () => {
+    setCurrentStep(0)
+    setShippingLabel({ ...initState })
+  };
 
   console.log('my new state is: ', shippingLabel)
   console.log('currentStep: ', currentStep);
@@ -34,6 +38,7 @@ function App() {
             setCurrentStep={setCurrentStep}
             shippingLabel={shippingLabel}
             updateAppState={updateAppState}
+            resetAppState={resetAppState}
             />
     </div>
   );
